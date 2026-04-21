@@ -1,0 +1,159 @@
+/* ============================================
+   ABOUT PAGE STYLES
+   css/about.css
+   ============================================ */
+
+.about-layout {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+/* ── Photo column ── */
+.about-photo-col { display: flex; flex-direction: column; gap: 1.5rem; }
+
+.about-photo-frame {
+  width: 100%;
+  aspect-ratio: 4/5;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--bg3);
+}
+
+.about-photo {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+}
+
+.about-photo-placeholder {
+  width: 100%; height: 100%;
+  min-height: 380px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  background: var(--bg3);
+}
+.about-photo-placeholder .photo-initials {
+  font-family: 'Syne', sans-serif;
+  font-size: 4rem;
+  font-weight: 800;
+  color: var(--accent);
+}
+.about-photo-placeholder .photo-hint {
+  font-size: 0.72rem;
+  color: var(--muted);
+  text-align: center;
+  line-height: 1.7;
+}
+.about-photo-placeholder .photo-hint code {
+  font-size: 0.68rem;
+  color: var(--accent2);
+  background: rgba(0,212,170,0.08);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.about-contact-quick {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.aq-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0.65rem 1rem;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 0.8rem;
+  color: var(--muted);
+  transition: all 0.2s;
+  word-break: break-all;
+}
+.aq-link:hover {
+  color: var(--text);
+  border-color: rgba(108,99,255,0.3);
+  background: rgba(108,99,255,0.05);
+}
+.aq-link span {
+  font-size: 0.85rem;
+  color: var(--accent);
+  min-width: 16px;
+  text-align: center;
+}
+
+/* ── Text column ── */
+.about-text-col { display: flex; flex-direction: column; gap: 2rem; }
+
+.about-sub-heading {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.about-intro p,
+.about-block p {
+  color: var(--muted);
+  line-height: 1.9;
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+}
+.about-block p strong { color: var(--text); font-weight: 500; }
+
+/* ── Values grid ── */
+.about-values {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.value-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 1rem;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+.value-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 2px; }
+.value-title { font-size: 0.88rem; font-weight: 500; margin-bottom: 3px; }
+.value-desc { font-size: 0.78rem; color: var(--muted); line-height: 1.5; }
+
+/* ── Goal quote ── */
+.about-goal {
+  border-left: 2px solid var(--accent);
+  padding-left: 1.5rem;
+}
+.goal-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+.goal-quote {
+  font-size: 1.05rem;
+  color: var(--muted);
+  font-style: italic;
+  line-height: 1.8;
+  font-weight: 300;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .about-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+  .about-photo-frame { max-width: 280px; margin: 0 auto; }
+  .about-photo-col { align-items: center; }
+}
+@media (max-width: 600px) {
+  .about-values { grid-template-columns: 1fr; }
+}

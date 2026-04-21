@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Ange Umutoni Uwimpuhwe</title>
+  <meta name="description" content="Get in touch with Umutoni Ange — open to internships, collaborations, and developer roles.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/contact.css">
+</head>
+<body>
+
+<div id="nav-placeholder"></div>
+
+<main class="page-content">
+  <section class="section contact-section">
+
+    <div class="section-header fade-up">
+      <span class="section-num">05</span>
+      <h2 class="section-title">Contact</h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="contact-layout">
+
+      <!-- Left: CTA text -->
+      <div class="contact-left fade-up">
+        <div class="badge badge-green" style="margin-bottom:1.5rem;">
+          <span class="badge-dot"></span>
+          Open to internships &amp; entry-level roles
+        </div>
+
+        <h3 class="contact-heading">
+          Let's build something<br>
+          <span class="ch-accent">together.</span>
+        </h3>
+
+        <p class="contact-desc">
+          I'm actively looking for opportunities to work on real products, learn from
+          experienced engineers, and contribute to meaningful software. Whether it's an
+          internship, freelance project, or just a conversation — I'm all ears.
+        </p>
+
+        <p class="contact-desc" style="margin-top:-0.5rem;">
+          I reply to every message. Usually within 24 hours.
+        </p>
+
+        <div class="contact-channels">
+          <a href="mailto:umutoniuwimpuhwe@gmail.com" class="channel-card">
+            <div class="channel-icon">✉</div>
+            <div>
+              <div class="channel-label">Email</div>
+              <div class="channel-value">umutoniuwimpuhwe@gmail.com</div>
+            </div>
+            <span class="channel-arrow">→</span>
+          </a>
+
+          <a href="https://github.com/Mpuhwecoder" target="_blank" class="channel-card">
+            <div class="channel-icon">⌥</div>
+            <div>
+              <div class="channel-label">GitHub</div>
+              <div class="channel-value">github.com/Mpuhwecoder</div>
+            </div>
+            <span class="channel-arrow">↗</span>
+          </a>
+
+          <a href="https://linkedin.com/in/umutoniange" target="_blank" class="channel-card">
+            <div class="channel-icon" style="font-weight:700;font-family:'Syne',sans-serif;font-size:0.9rem;">in</div>
+            <div>
+              <div class="channel-label">LinkedIn</div>
+              <div class="channel-value">linkedin.com/in/umutoniange</div>
+            </div>
+            <span class="channel-arrow">↗</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right: Quick contact form -->
+      <div class="contact-right fade-up delay-2">
+        <div class="contact-form-card card">
+          <h4 class="form-heading">Send a quick message</h4>
+          <p class="form-sub">I'll reply to your email directly.</p>
+
+          <div class="form-group">
+            <label class="form-label" for="name">Your Name</label>
+            <input type="text" id="name" class="form-input" placeholder="e.g. ange toni">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="email">Your Email</label>
+            <input type="email" id="email" class="form-input" placeholder="you@email.com">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="subject">Subject</label>
+            <input type="text" id="subject" class="form-input" placeholder="Internship opportunity, collaboration...">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="message">Message</label>
+            <textarea id="message" class="form-input form-textarea" placeholder="Tell me about the opportunity or what you'd like to discuss..."></textarea>
+          </div>
+
+          <button class="btn btn-primary send-btn" onclick="handleSend()">
+            Send Message →
+          </button>
+
+          <div id="form-feedback" class="form-feedback" style="display:none;"></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<div id="footer-placeholder"></div>
+
+<script src="js/layout.js"></script>
+<script src="js/main.js"></script>
+<script>
+function handleSend() {
+  const name    = document.getElementById('name').value.trim();
+  const email   = document.getElementById('email').value.trim();
+  const subject = document.getElementById('subject').value.trim();
+  const message = document.getElementById('message').value.trim();
+  const fb      = document.getElementById('form-feedback');
+
+  if (!name || !email || !message) {
+    fb.style.display = 'block';
+    fb.className = 'form-feedback form-error';
+    fb.textContent = 'Please fill in your name, email, and message.';
+    return;
+  }
+
+  // Opens default mail client pre-filled
+  const mailtoLink = `mailto:umutoniuwimpuhwe@gmail.com?subject=${encodeURIComponent(subject || 'Portfolio Contact: ' + name)}&body=${encodeURIComponent('Hi Ange,\n\n' + message + '\n\nFrom: ' + name + '\nEmail: ' + email)}`;
+  window.location.href = mailtoLink;
+
+  fb.style.display = 'block';
+  fb.className = 'form-feedback form-success';
+  fb.textContent = '✓ Opening your mail app now. Thank you, ' + name + '!';
+}
+</script>
+</body>
+</html>

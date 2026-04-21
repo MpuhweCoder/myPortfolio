@@ -1,0 +1,157 @@
+/* ============================================
+   EDUCATION PAGE STYLES
+   css/education.css
+   ============================================ */
+
+.education-layout {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 3rem;
+  align-items: start;
+}
+
+/* ── Timeline ── */
+.edu-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  position: relative;
+  padding-left: 2rem;
+}
+.edu-timeline::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 14px; bottom: 20px;
+  width: 1px;
+  background: var(--border);
+}
+
+.timeline-item {
+  position: relative;
+  padding-bottom: 2.5rem;
+}
+.timeline-item:last-child { padding-bottom: 0; }
+
+.tl-dot {
+  position: absolute;
+  left: -2rem;
+  top: 14px;
+  width: 12px; height: 12px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 2px solid var(--bg);
+  box-shadow: 0 0 0 3px rgba(108,99,255,0.2);
+  transform: translateX(-5px);
+}
+.tl-dot-green {
+  background: var(--accent2);
+  box-shadow: 0 0 0 3px rgba(0,212,170,0.2);
+}
+
+.tl-content { display: flex; flex-direction: column; gap: 0.75rem; }
+
+.tl-date {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.tl-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.tl-org {
+  font-size: 0.84rem;
+  color: var(--accent2);
+  margin-top: -4px;
+}
+
+.tl-desc {
+  font-size: 0.88rem;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.tl-subjects {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 4px;
+}
+.subject-chip {
+  font-size: 0.74rem;
+  padding: 4px 12px;
+  background: rgba(108,99,255,0.07);
+  border: 1px solid rgba(108,99,255,0.14);
+  border-radius: 100px;
+  color: #a59fff;
+  font-weight: 500;
+}
+.chip-green {
+  background: rgba(0,212,170,0.06);
+  border-color: rgba(0,212,170,0.15);
+  color: var(--accent2);
+}
+
+/* ── Sidebar ── */
+.sidebar-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--text);
+}
+
+.sidebar-project {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.sidebar-project:last-child { border-bottom: none; }
+
+.sp-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex-shrink: 0;
+  margin-top: 6px;
+}
+.sp-name { font-size: 0.84rem; font-weight: 500; margin-bottom: 2px; }
+.sp-desc { font-size: 0.76rem; color: var(--muted); }
+
+.exploring-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.exploring-list li {
+  font-size: 0.84rem;
+  color: var(--muted);
+  padding-left: 1rem;
+  position: relative;
+}
+.exploring-list li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--accent2);
+  font-size: 0.75rem;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .education-layout { grid-template-columns: 1fr; }
+  .edu-sidebar { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .edu-sidebar > *:last-child { grid-column: span 2; }
+}
+@media (max-width: 600px) {
+  .edu-sidebar { grid-template-columns: 1fr; }
+  .edu-sidebar > *:last-child { grid-column: span 1; }
+}
