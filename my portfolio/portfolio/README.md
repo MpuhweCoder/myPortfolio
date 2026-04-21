@@ -38,53 +38,6 @@ portfolio/
 
 
 
-### Step 3 — Update index.html (Home page)
-Find this block in `index.html`:
-```html
-<div class="photo-placeholder">
-  <div class="photo-initials">UA</div>
-  ...
-</div>
-```
-Replace it with:
-```html
-<img src="images/ange-photo.jpg" alt="Umutoni Ange" class="hero-photo">
-```
-
-### Step 4 — Update about.html
-Find this block in `about.html`:
-```html
-<div class="about-photo-placeholder">
-  <div class="photo-initials">UA</div>
-  ...
-</div>
-```
-Replace it with:
-```html
-<img src="images/ange-photo.jpg" alt="Umutoni Ange" class="about-photo">
-```
-
-## Hosting for Free
-
-### Option 1 — GitHub Pages (Recommended)
-1. Create a GitHub repo named `yourusername.github.io`
-2. Upload all files keeping the same folder structure
-3. Go to Settings → Pages → Source: main branch
-4. Your site will be live at `https://yourusername.github.io`
-
-### Option 2 — Netlify (Easiest)
-1. Go to netlify.com and sign up free
-2. Drag and drop the entire `portfolio/` folder
-3. Your site goes live instantly with a URL like `random-name.netlify.app`
-4. You can set a custom domain later
-
-### Option 3 — Vercel
-1. Go to vercel.com
-2. Import from GitHub or drag-drop
-3. Instant deployment
-
----
-
 ## Customization Tips
 
 - **Colors**: All color variables are in `css/style.css` under `:root {}`
